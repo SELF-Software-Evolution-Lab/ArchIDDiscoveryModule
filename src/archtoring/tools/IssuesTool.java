@@ -68,7 +68,7 @@ public class IssuesTool extends AbstractTool {
 								+ commit + "/" + folder + "/" + path + "'>" + className + ".java" + "</a></p>"
 								+ "<p>On commit:  <a href='https://github.com/" + org + "/" + repoName + "/tree/"
 								+ commit + "'>" + commit + "</a></p>"
-								+ "<p>Go to the <a href='https://archtoringkb.herokuapp.com'>Knowledge Base</a> to find more info about this violation");
+								+ "<p>Go to the <a href='https://archidkb.herokuapp.com/'>Knowledge Base</a> to find more info about this violation");
 						i1.setLabels(previousLabels);
 						i1.setState("open");
 						GithubHandler.service.editIssue(GithubHandler.repo, i1);
@@ -81,7 +81,7 @@ public class IssuesTool extends AbstractTool {
 						+ org + "/" + repoName + "/blob/" + commit + "/" + folder + "/" + path + "'>" + className
 						+ ".java" + "</a></p>" + "<p>On commit:  <a href='https://github.com/" + org + "/" + repoName
 						+ "/tree/" + commit + "'>" + commit + "</a></p>"
-						+ "<p>Go to the <a href='https://archtoringkb.herokuapp.com'>Knowledge Base</a> to find more info about this violation");
+						+ "<p>Go to the <a href='https://archidkb.herokuapp.com/'>Knowledge Base</a> to find more info about this violation");
 
 				if (GithubHandler.author != null)
 					issue.setAssignee(GithubHandler.author);

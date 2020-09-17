@@ -51,7 +51,7 @@ public class GithubHandler {
 			decisions = new HashMap<Decision, List<Rule>>();
 			issues = new HashMap<String, List<Issue>>();
 			ProcessBuilder processBuilder = new ProcessBuilder();
-			processBuilder.command("cmd.exe", "/c",
+			processBuilder.command("/bin/bash", "-c", 
 					"git remote get-url origin && git rev-parse HEAD && git log -1 --pretty=format:%ae%n%aI");
 
 			Process process = processBuilder.start();
