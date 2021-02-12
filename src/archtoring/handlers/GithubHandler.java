@@ -67,6 +67,7 @@ public class GithubHandler {
 
 			service = new IssueService();
 			service.getClient().setOAuth2Token(System.getenv("ARCHID_TOKEN"));
+			
 			UserService userService = new UserService();
 			GitHub github = GitHub.connectUsingOAuth(System.getenv("ARCHID_TOKEN"));
 			GHUserSearchBuilder searchUser = github.searchUsers();
@@ -95,7 +96,7 @@ public class GithubHandler {
 		if (EPLHandler.args.get(0).equals("--gh") || EPLHandler.args.get(0).equals("--full")) {
 			String commit = output[1];
 			for (org.eclipse.egit.github.core.Issue i : issuesGithub) {
-				if (i.getState().equals("open")) {
+				if (i.getState().equals("open") && i.getLabels().size() > 0 ) {
 					List<Label> previousLabels = i.getLabels();
 					boolean found = false;
 					for (int j = 0; j < previousLabels.size() && !found; j++) {
